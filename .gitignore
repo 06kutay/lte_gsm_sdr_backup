@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# SQLite databases & temp outputs
+*.sqlite
+*.sqlite3
+vol/output/
+lte-sib-parser/vol/output/
+scan_report_*.txt
+mock_results.json
+scan_results.json
+
+# Local planning and temp logs
+implementation_plan*.md
+.idea/
+.vscode/
+.DS_Store
+venv/
+env/
+.env

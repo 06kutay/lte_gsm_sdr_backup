@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/graphml">
+  <key id="label" for="node" attr.name="label" attr.type="string"/>
+  <key id="category" for="node" attr.name="category" attr.type="string"/>
+  <key id="tags" for="node" attr.name="tags" attr.type="string"/>
+  <key id="community" for="node" attr.name="community" attr.type="int"/>
+  <key id="relation" for="edge" attr.name="relation" attr.type="string"/>
+  <key id="type" for="edge" attr.name="type" attr.type="string"/>
+  <key id="confidence" for="edge" attr.name="confidence" attr.type="string"/>
+  <graph id="wiki" edgedefault="undirected">
+    <node id="synthesis/sistem-mimarisi">
+      <data key="label">Sistem Mimarisi</data>
+      <data key="category">synthesis</data>
+      <data key="tags">synthesis, architecture, pipeline, data-flow</data>
+      <data key="community">7</data>
+    </node>
+    <node id="bands/band_20">
+      <data key="label">Band_20</data>
+      <data key="category">bands</data>
+      <data key="tags">band, lte, spectrum</data>
+      <data key="community">3</data>
+    </node>
+    <node id="bands/band_3">
+      <data key="label">Band_3</data>
+      <data key="category">bands</data>
+      <data key="tags">band, lte, spectrum</data>
+      <data key="community">3</data>
+    </node>
+    <node id="bands/band_7">
+      <data key="label">Band_7</data>
+      <data key="category">bands</data>
+      <data key="tags">band, lte, spectrum</data>
+      <data key="community">3</data>
+    </node>
+    <node id="bands/band_1">
+      <data key="label">Band_1</data>
+      <data key="category">bands</data>
+      <data key="tags">band, lte, spectrum</data>
+      <data key="community">3</data>
+    </node>
+    <node id="entities/lte-sib-parser">
+      <data key="label">lte-sib-parser</data>
+      <data key="category">entities</data>
+      <data key="tags">tool, software, lte, parser</data>
+      <data key="community">8</data>
+    </node>
+    <node id="entities/srsran">
+      <data key="label">srsRAN</data>
+      <data key="category">entities</data>
+      <data key="tags">software, lte, sdr, radio</data>
+      <data key="community">9</data>
+    </node>
+    <node id="entities/limesdr-mini-2.0">
+      <data key="label">LimeSDR Mini 2.0</data>
+      <data key="category">entities</data>
+      <data key="tags">hardware, sdr, rf, radio</data>
+      <data key="community">10</data>
+    </node>
+    <node id="operators/operator_286_03">
+      <data key="label">Operator_286_03</data>
+      <data key="category">operators</data>
+      <data key="tags">operator, plmn, türktelekom</data>
+      <data key="community">4</data>
+    </node>
+    <node id="operators/operator_286_01">
+      <data key="label">Operator_286_01</data>
+      <data key="category">operators</data>
+      <data key="tags">operator, plmn, turkcell</data>
+      <data key="community">4</data>
+    </node>
+    <node id="logs/scan_20260601_iter1">
+      <data key="label">Tarama Detayı - 2026-06-01 13:52:03</data>
+      <data key="category">logs</data>
+      <data key="tags">tarama-log, scan</data>
+      <data key="community">5</data>
+    </node>
+    <node id="logs/tarama-log">
+      <data key="label">Tarama Log</data>
+      <data key="category">logs</data>
+      <data key="tags">tarama-log</data>
+      <data key="community">5</data>
+    </node>
+    <node id="skills/wiki-ingest-pipeline">
+      <data key="label">wiki-ingest-pipeline</data>
+      <data key="category">skills</data>
+      <data key="tags">skill, automation, lte</data>
+      <data key="community">2</data>
+    </node>
+    <node id="skills/sib-result-reader">
+      <data key="label">sib-result-reader</data>
+      <data key="category">skills</data>
+      <data key="tags">skill, automation, lte</data>
+      <data key="community">2</data>
+    </node>
+    <node id="skills/rescan-feeder">
+      <data key="label">rescan-feeder</data>
+      <data key="category">skills</data>
+      <data key="tags">skill, automation, lte</data>
+      <data key="community">2</data>
+    </node>
+    <node id="skills/earfcn-validator">
+      <data key="label">earfcn-validator</data>
+      <data key="category">skills</data>
+      <data key="tags">skill, automation, lte</data>
+      <data key="community">2</data>
+    </node>
+    <node id="skills/neighbor-reporter">
+      <data key="label">neighbor-reporter</data>
+      <data key="category">skills</data>
+      <data key="tags">skill, automation, lte</data>
+      <data key="community">2</data>
+    </node>
+    <node id="skills/sib-scan.sh">
+      <data key="label">sib-scan.sh</data>
+      <data key="category">skills</data>
+      <data key="tags">script, bash, tool, scan</data>
+      <data key="community">6</data>
+    </node>
+    <node id="skills/docker-kurulum">
+      <data key="label">Docker Kurulum</data>
+      <data key="category">skills</data>
+      <data key="tags">docker, installation, virtualization, hardware-access</data>
+      <data key="community">11</data>
+    </node>
+    <node id="skills/dbparsers">
+      <data key="label">dbparsers</data>
+      <data key="category">skills</data>
+      <data key="tags">script, python, database, analysis</data>
+      <data key="community">6</data>
+    </node>
+    <node id="skills/sib-scan-builder">
+      <data key="label">sib-scan-builder</data>
+      <data key="category">skills</data>
+      <data key="tags">skill, automation, lte</data>
+      <data key="community">2</data>
+    </node>
+    <node id="references/frekans-tablosu">
+      <data key="label">Frekans Tablosu</data>
+      <data key="category">references</data>
+      <data key="tags">reference, rf, table, frequency</data>
+      <data key="community">12</data>
+    </node>
+    <node id="references/komşu-haritası">
+      <data key="label">Komşu Haritası</data>
+      <data key="category">references</data>
+      <data key="tags">topology, relations, matrix</data>
+      <data key="community">13</data>
+    </node>
+    <node id="concepts/earfcn">
+      <data key="label">EARFCN</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, rf, radio, mathematical</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/sib5">
+      <data key="label">SIB5</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, sib, radio, mobility</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/komşu-hücre-analizi">
+      <data key="label">Komşu Hücre Analizi</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, radio, mobility, concepts</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/sib1">
+      <data key="label">SIB1</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, sib, radio, protocols</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/sib-genel">
+      <data key="label">SIB Genel</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, sib, radio, telecommunication</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/sib4">
+      <data key="label">SIB4</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, sib, radio, mobility</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/uarfcn">
+      <data key="label">UARFCN</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, 3g, rf, concept</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/sib7">
+      <data key="label">SIB7</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, sib, radio, 2g, geran</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/lte-bandlar">
+      <data key="label">LTE Bandlar</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, rf, turkey, regulations</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/sib3">
+      <data key="label">SIB3</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, sib, radio, mobility</data>
+      <data key="community">0</data>
+    </node>
+    <node id="concepts/sib6">
+      <data key="label">SIB6</data>
+      <data key="category">concepts</data>
+      <data key="tags">lte, sib, radio, 3g, utran</data>
+      <data key="community">0</data>
+    </node>
+    <node id="cells/cell_earfcn6200_pci210">
+      <data key="label">Cell_EARFCN6200_PCI210</data>
+      <data key="category">cells</data>
+      <data key="tags">cell, lte, band20</data>
+      <data key="community">1</data>
+    </node>
+    <node id="cells/cell_earfcn100_pci265">
+      <data key="label">Cell_EARFCN100_PCI265</data>
+      <data key="category">cells</data>
+      <data key="tags">cell, lte, band1</data>
+      <data key="community">1</data>
+    </node>
+    <node id="cells/cell_earfcn3350_pci112">
+      <data key="label">Cell_EARFCN3350_PCI112</data>
+      <data key="category">cells</data>
+      <data key="tags">cell, lte, band7</data>
+      <data key="community">1</data>
+    </node>
+    <node id="cells/cell_earfcn1444_pci82">
+      <data key="label">Cell_EARFCN1444_PCI82</data>
+      <data key="category">cells</data>
+      <data key="tags">cell, lte, band3</data>
+      <data key="community">1</data>
+    </node>
+    <node id="cells/cell_earfcn1300_pci45">
+      <data key="label">Cell_EARFCN1300_PCI45</data>
+      <data key="category">cells</data>
+      <data key="tags">cell, lte, band3</data>
+      <data key="community">1</data>
+    </node>
+    <node id="cells/cell_earfcn2850_pci192">
+      <data key="label">Cell_EARFCN2850_PCI192</data>
+      <data key="category">cells</data>
+      <data key="tags">cell, lte, band7</data>
+      <data key="community">1</data>
+    </node>
+    <node id="cells/cell_earfcn6400_pci189">
+      <data key="label">Cell_EARFCN6400_PCI189</data>
+      <data key="category">cells</data>
+      <data key="tags">cell, lte, band20</data>
+      <data key="community">1</data>
+    </node>
+    <edge id="e0" source="synthesis/sistem-mimarisi" target="entities/limesdr-mini-2.0">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e1" source="synthesis/sistem-mimarisi" target="skills/docker-kurulum">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e2" source="synthesis/sistem-mimarisi" target="skills/sib-scan.sh">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e3" source="synthesis/sistem-mimarisi" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e4" source="synthesis/sistem-mimarisi" target="entities/srsran">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e5" source="synthesis/sistem-mimarisi" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e6" source="synthesis/sistem-mimarisi" target="skills/dbparsers">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e7" source="synthesis/sistem-mimarisi" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e8" source="synthesis/sistem-mimarisi" target="concepts/sib1">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e9" source="synthesis/sistem-mimarisi" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e10" source="synthesis/sistem-mimarisi" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e11" source="bands/band_20" target="cells/cell_earfcn6200_pci210">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e12" source="bands/band_20" target="cells/cell_earfcn6400_pci189">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e13" source="bands/band_3" target="cells/cell_earfcn1444_pci82">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e14" source="bands/band_3" target="cells/cell_earfcn1300_pci45">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e15" source="bands/band_7" target="cells/cell_earfcn3350_pci112">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e16" source="bands/band_7" target="cells/cell_earfcn2850_pci192">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e17" source="bands/band_1" target="cells/cell_earfcn100_pci265">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e18" source="entities/lte-sib-parser" target="entities/limesdr-mini-2.0">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e19" source="entities/lte-sib-parser" target="entities/srsran">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e20" source="entities/lte-sib-parser" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e21" source="entities/lte-sib-parser" target="skills/dbparsers">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e22" source="entities/lte-sib-parser" target="concepts/sib1">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e23" source="entities/lte-sib-parser" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e24" source="entities/lte-sib-parser" target="concepts/sib4">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e25" source="entities/lte-sib-parser" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e26" source="entities/lte-sib-parser" target="concepts/sib6">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e27" source="entities/lte-sib-parser" target="concepts/sib7">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e28" source="entities/lte-sib-parser" target="skills/sib-scan.sh">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e29" source="entities/lte-sib-parser" target="skills/docker-kurulum">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e30" source="entities/lte-sib-parser" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e31" source="entities/srsran" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e32" source="entities/srsran" target="skills/sib-scan.sh">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e33" source="entities/srsran" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e34" source="entities/srsran" target="concepts/sib-genel">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e35" source="entities/srsran" target="entities/limesdr-mini-2.0">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e36" source="entities/limesdr-mini-2.0" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e37" source="entities/limesdr-mini-2.0" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e38" source="entities/limesdr-mini-2.0" target="skills/docker-kurulum">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e39" source="operators/operator_286_03" target="cells/cell_earfcn6200_pci210">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e40" source="operators/operator_286_03" target="cells/cell_earfcn3350_pci112">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e41" source="operators/operator_286_01" target="cells/cell_earfcn100_pci265">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e42" source="operators/operator_286_01" target="cells/cell_earfcn1444_pci82">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e43" source="operators/operator_286_01" target="cells/cell_earfcn1300_pci45">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e44" source="operators/operator_286_01" target="cells/cell_earfcn2850_pci192">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e45" source="operators/operator_286_01" target="cells/cell_earfcn6400_pci189">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e46" source="logs/tarama-log" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e47" source="logs/tarama-log" target="logs/scan_20260601_iter1">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e48" source="skills/wiki-ingest-pipeline" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e49" source="skills/sib-result-reader" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e50" source="skills/rescan-feeder" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e51" source="skills/earfcn-validator" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e52" source="skills/neighbor-reporter" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e53" source="skills/sib-scan.sh" target="skills/dbparsers">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e54" source="skills/sib-scan.sh" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e55" source="skills/sib-scan.sh" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e56" source="skills/sib-scan.sh" target="concepts/sib1">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e57" source="skills/sib-scan.sh" target="entities/limesdr-mini-2.0">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e58" source="skills/sib-scan.sh" target="skills/docker-kurulum">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e59" source="skills/sib-scan.sh" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e60" source="skills/docker-kurulum" target="entities/srsran">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e61" source="skills/docker-kurulum" target="skills/dbparsers">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e62" source="skills/dbparsers" target="concepts/sib1">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e63" source="skills/dbparsers" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e64" source="skills/dbparsers" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e65" source="skills/dbparsers" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e66" source="skills/dbparsers" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e67" source="skills/dbparsers" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e68" source="skills/dbparsers" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e69" source="skills/sib-scan-builder" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e70" source="references/frekans-tablosu" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e71" source="references/frekans-tablosu" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e72" source="references/komşu-haritası" target="cells/cell_earfcn100_pci265">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e73" source="references/komşu-haritası" target="cells/cell_earfcn3350_pci112">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e74" source="references/komşu-haritası" target="cells/cell_earfcn1444_pci82">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e75" source="references/komşu-haritası" target="cells/cell_earfcn1300_pci45">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e76" source="references/komşu-haritası" target="cells/cell_earfcn6400_pci189">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e77" source="concepts/earfcn" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e78" source="concepts/sib5" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e79" source="concepts/sib5" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e80" source="concepts/komşu-hücre-analizi" target="concepts/sib4">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e81" source="concepts/komşu-hücre-analizi" target="concepts/sib6">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e82" source="concepts/komşu-hücre-analizi" target="concepts/sib7">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e83" source="concepts/komşu-hücre-analizi" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e84" source="concepts/komşu-hücre-analizi" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e85" source="concepts/sib1" target="concepts/sib-genel">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e86" source="concepts/sib1" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e87" source="concepts/sib1" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e88" source="concepts/sib-genel" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e89" source="concepts/sib-genel" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e90" source="concepts/sib-genel" target="concepts/sib4">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e91" source="concepts/sib-genel" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e92" source="concepts/sib-genel" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e93" source="concepts/sib-genel" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e94" source="concepts/sib-genel" target="concepts/sib6">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e95" source="concepts/sib-genel" target="concepts/sib7">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e96" source="concepts/sib4" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e97" source="concepts/sib4" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e98" source="concepts/sib4" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e99" source="concepts/sib4" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e100" source="concepts/uarfcn" target="concepts/earfcn">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e101" source="concepts/uarfcn" target="concepts/sib6">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e102" source="concepts/uarfcn" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e103" source="concepts/sib7" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e104" source="concepts/sib7" target="concepts/sib6">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e105" source="concepts/lte-bandlar" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e106" source="concepts/lte-bandlar" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e107" source="concepts/lte-bandlar" target="concepts/sib3">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e108" source="concepts/lte-bandlar" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e109" source="concepts/lte-bandlar" target="concepts/komşu-hücre-analizi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e110" source="concepts/lte-bandlar" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e111" source="concepts/sib3" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e112" source="concepts/sib3" target="concepts/sib6">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e113" source="concepts/sib3" target="concepts/sib7">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e114" source="concepts/sib6" target="concepts/sib5">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e115" source="concepts/sib6" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e116" source="cells/cell_earfcn6200_pci210" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e117" source="cells/cell_earfcn6200_pci210" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e118" source="cells/cell_earfcn6200_pci210" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e119" source="cells/cell_earfcn6200_pci210" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e120" source="cells/cell_earfcn6200_pci210" target="logs/tarama-log">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e121" source="cells/cell_earfcn100_pci265" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e122" source="cells/cell_earfcn100_pci265" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e123" source="cells/cell_earfcn100_pci265" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e124" source="cells/cell_earfcn100_pci265" target="cells/cell_earfcn2850_pci192">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e125" source="cells/cell_earfcn100_pci265" target="cells/cell_earfcn6400_pci189">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e126" source="cells/cell_earfcn100_pci265" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e127" source="cells/cell_earfcn100_pci265" target="logs/tarama-log">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e128" source="cells/cell_earfcn3350_pci112" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e129" source="cells/cell_earfcn3350_pci112" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e130" source="cells/cell_earfcn3350_pci112" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e131" source="cells/cell_earfcn3350_pci112" target="cells/cell_earfcn6200_pci210">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e132" source="cells/cell_earfcn3350_pci112" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e133" source="cells/cell_earfcn3350_pci112" target="logs/tarama-log">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e134" source="cells/cell_earfcn1444_pci82" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e135" source="cells/cell_earfcn1444_pci82" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e136" source="cells/cell_earfcn1444_pci82" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e137" source="cells/cell_earfcn1444_pci82" target="cells/cell_earfcn1300_pci45">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e138" source="cells/cell_earfcn1444_pci82" target="cells/cell_earfcn3350_pci112">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e139" source="cells/cell_earfcn1444_pci82" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e140" source="cells/cell_earfcn1444_pci82" target="logs/tarama-log">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e141" source="cells/cell_earfcn1300_pci45" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e142" source="cells/cell_earfcn1300_pci45" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e143" source="cells/cell_earfcn1300_pci45" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e144" source="cells/cell_earfcn1300_pci45" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e145" source="cells/cell_earfcn1300_pci45" target="logs/tarama-log">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e146" source="cells/cell_earfcn2850_pci192" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e147" source="cells/cell_earfcn2850_pci192" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e148" source="cells/cell_earfcn2850_pci192" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e149" source="cells/cell_earfcn2850_pci192" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e150" source="cells/cell_earfcn2850_pci192" target="logs/tarama-log">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e151" source="cells/cell_earfcn6400_pci189" target="entities/lte-sib-parser">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e152" source="cells/cell_earfcn6400_pci189" target="concepts/lte-bandlar">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e153" source="cells/cell_earfcn6400_pci189" target="references/frekans-tablosu">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e154" source="cells/cell_earfcn6400_pci189" target="cells/cell_earfcn2850_pci192">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e155" source="cells/cell_earfcn6400_pci189" target="synthesis/sistem-mimarisi">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+    <edge id="e156" source="cells/cell_earfcn6400_pci189" target="logs/tarama-log">
+      <data key="relation">wikilink</data>
+      <data key="confidence">EXTRACTED</data>
+    </edge>
+  </graph>
+</graphml>

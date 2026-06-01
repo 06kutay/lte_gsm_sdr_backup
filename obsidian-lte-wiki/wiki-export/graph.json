@@ -1,0 +1,1466 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "exported_at": "2026-06-01T14:06:45.905279",
+    "vault": "/home/mobsec/Desktop/netmon/obsidian-lte-wiki",
+    "total_nodes": 41,
+    "total_edges": 157
+  },
+  "nodes": [
+    {
+      "id": "synthesis/sistem-mimarisi",
+      "label": "Sistem Mimarisi",
+      "category": "synthesis",
+      "tags": [
+        "synthesis",
+        "architecture",
+        "pipeline",
+        "data-flow"
+      ],
+      "summary": "Uçtan Uca LTE Komşu Hücre Analiz Sistemi Mimarisi",
+      "community": 7
+    },
+    {
+      "id": "bands/band_20",
+      "label": "Band_20",
+      "category": "bands",
+      "tags": [
+        "band",
+        "lte",
+        "spectrum"
+      ],
+      "summary": "Frekans Band Raporu: Band 20",
+      "community": 3
+    },
+    {
+      "id": "bands/band_3",
+      "label": "Band_3",
+      "category": "bands",
+      "tags": [
+        "band",
+        "lte",
+        "spectrum"
+      ],
+      "summary": "Frekans Band Raporu: Band 3",
+      "community": 3
+    },
+    {
+      "id": "bands/band_7",
+      "label": "Band_7",
+      "category": "bands",
+      "tags": [
+        "band",
+        "lte",
+        "spectrum"
+      ],
+      "summary": "Frekans Band Raporu: Band 7",
+      "community": 3
+    },
+    {
+      "id": "bands/band_1",
+      "label": "Band_1",
+      "category": "bands",
+      "tags": [
+        "band",
+        "lte",
+        "spectrum"
+      ],
+      "summary": "Frekans Band Raporu: Band 1",
+      "community": 3
+    },
+    {
+      "id": "entities/lte-sib-parser",
+      "label": "lte-sib-parser",
+      "category": "entities",
+      "tags": [
+        "tool",
+        "software",
+        "lte",
+        "parser"
+      ],
+      "summary": "lte-sib-parser",
+      "community": 8
+    },
+    {
+      "id": "entities/srsran",
+      "label": "srsRAN",
+      "category": "entities",
+      "tags": [
+        "software",
+        "lte",
+        "sdr",
+        "radio"
+      ],
+      "summary": "srsRAN_4G",
+      "community": 9
+    },
+    {
+      "id": "entities/limesdr-mini-2.0",
+      "label": "LimeSDR Mini 2.0",
+      "category": "entities",
+      "tags": [
+        "hardware",
+        "sdr",
+        "rf",
+        "radio"
+      ],
+      "summary": "LimeSDR Mini 2.0",
+      "community": 10
+    },
+    {
+      "id": "operators/operator_286_03",
+      "label": "Operator_286_03",
+      "category": "operators",
+      "tags": [
+        "operator",
+        "plmn",
+        "türktelekom"
+      ],
+      "summary": "Operatör Profil Raporu: Türk Telekom",
+      "community": 4
+    },
+    {
+      "id": "operators/operator_286_01",
+      "label": "Operator_286_01",
+      "category": "operators",
+      "tags": [
+        "operator",
+        "plmn",
+        "turkcell"
+      ],
+      "summary": "Operatör Profil Raporu: Turkcell",
+      "community": 4
+    },
+    {
+      "id": "logs/scan_20260601_iter1",
+      "label": "Tarama Detayı - 2026-06-01 13:52:03",
+      "category": "logs",
+      "tags": [
+        "tarama-log",
+        "scan"
+      ],
+      "summary": "Tarama Raporu: 2026-06-01 13:52:03 (İterasyon: 1)",
+      "community": 5
+    },
+    {
+      "id": "logs/tarama-log",
+      "label": "Tarama Log",
+      "category": "logs",
+      "tags": [
+        "tarama-log"
+      ],
+      "summary": "Tarama Log Defteri",
+      "community": 5
+    },
+    {
+      "id": "skills/wiki-ingest-pipeline",
+      "label": "wiki-ingest-pipeline",
+      "category": "skills",
+      "tags": [
+        "skill",
+        "automation",
+        "lte"
+      ],
+      "summary": "wiki-ingest-pipeline",
+      "community": 2
+    },
+    {
+      "id": "skills/sib-result-reader",
+      "label": "sib-result-reader",
+      "category": "skills",
+      "tags": [
+        "skill",
+        "automation",
+        "lte"
+      ],
+      "summary": "sib-result-reader",
+      "community": 2
+    },
+    {
+      "id": "skills/rescan-feeder",
+      "label": "rescan-feeder",
+      "category": "skills",
+      "tags": [
+        "skill",
+        "automation",
+        "lte"
+      ],
+      "summary": "rescan-feeder",
+      "community": 2
+    },
+    {
+      "id": "skills/earfcn-validator",
+      "label": "earfcn-validator",
+      "category": "skills",
+      "tags": [
+        "skill",
+        "automation",
+        "lte"
+      ],
+      "summary": "earfcn-validator",
+      "community": 2
+    },
+    {
+      "id": "skills/neighbor-reporter",
+      "label": "neighbor-reporter",
+      "category": "skills",
+      "tags": [
+        "skill",
+        "automation",
+        "lte"
+      ],
+      "summary": "neighbor-reporter",
+      "community": 2
+    },
+    {
+      "id": "skills/sib-scan.sh",
+      "label": "sib-scan.sh",
+      "category": "skills",
+      "tags": [
+        "script",
+        "bash",
+        "tool",
+        "scan"
+      ],
+      "summary": "sib-scan.sh Kullanım Kılavuzu ve Script Detayları",
+      "community": 6
+    },
+    {
+      "id": "skills/docker-kurulum",
+      "label": "Docker Kurulum",
+      "category": "skills",
+      "tags": [
+        "docker",
+        "installation",
+        "virtualization",
+        "hardware-access"
+      ],
+      "summary": "Docker Kurulumu ve Donanım Geçiş (USB Passthrough) Kılavuzu",
+      "community": 11
+    },
+    {
+      "id": "skills/dbparsers",
+      "label": "dbparsers",
+      "category": "skills",
+      "tags": [
+        "script",
+        "python",
+        "database",
+        "analysis"
+      ],
+      "summary": "dbparsers Veritabanı Analiz Scriptleri Rehberi",
+      "community": 6
+    },
+    {
+      "id": "skills/sib-scan-builder",
+      "label": "sib-scan-builder",
+      "category": "skills",
+      "tags": [
+        "skill",
+        "automation",
+        "lte"
+      ],
+      "summary": "sib-scan-builder",
+      "community": 2
+    },
+    {
+      "id": "references/frekans-tablosu",
+      "label": "Frekans Tablosu",
+      "category": "references",
+      "tags": [
+        "reference",
+        "rf",
+        "table",
+        "frequency"
+      ],
+      "summary": "LTE Frekans ve EARFCN Referans Tablosu",
+      "community": 12
+    },
+    {
+      "id": "references/komşu-haritası",
+      "label": "Komşu Haritası",
+      "category": "references",
+      "tags": [
+        "topology",
+        "relations",
+        "matrix"
+      ],
+      "summary": "LTE Komşu Haritası Matrisi",
+      "community": 13
+    },
+    {
+      "id": "concepts/earfcn",
+      "label": "EARFCN",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "rf",
+        "radio",
+        "mathematical"
+      ],
+      "summary": "EARFCN (E-UTRA Absolute Radio Frequency Channel Number)",
+      "community": 0
+    },
+    {
+      "id": "concepts/sib5",
+      "label": "SIB5",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "sib",
+        "radio",
+        "mobility"
+      ],
+      "summary": "SIB5 (System Information Block Type 5)",
+      "community": 0
+    },
+    {
+      "id": "concepts/komşu-hücre-analizi",
+      "label": "Komşu Hücre Analizi",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "radio",
+        "mobility",
+        "concepts"
+      ],
+      "summary": "Komşu Hücre (Neighbor Cell) Analizi ve Ağ Mobilitesi",
+      "community": 0
+    },
+    {
+      "id": "concepts/sib1",
+      "label": "SIB1",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "sib",
+        "radio",
+        "protocols"
+      ],
+      "summary": "SIB1 (System Information Block Type 1)",
+      "community": 0
+    },
+    {
+      "id": "concepts/sib-genel",
+      "label": "SIB Genel",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "sib",
+        "radio",
+        "telecommunication"
+      ],
+      "summary": "SIB (System Information Block) Genel",
+      "community": 0
+    },
+    {
+      "id": "concepts/sib4",
+      "label": "SIB4",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "sib",
+        "radio",
+        "mobility"
+      ],
+      "summary": "SIB4 (System Information Block Type 4)",
+      "community": 0
+    },
+    {
+      "id": "concepts/uarfcn",
+      "label": "UARFCN",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "3g",
+        "rf",
+        "concept"
+      ],
+      "summary": "UARFCN (UTRA Absolute Radio Frequency Channel Number)",
+      "community": 0
+    },
+    {
+      "id": "concepts/sib7",
+      "label": "SIB7",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "sib",
+        "radio",
+        "2g",
+        "geran"
+      ],
+      "summary": "SIB7 (System Information Block Type 7)",
+      "community": 0
+    },
+    {
+      "id": "concepts/lte-bandlar",
+      "label": "LTE Bandlar",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "rf",
+        "turkey",
+        "regulations"
+      ],
+      "summary": "Türkiye'de Kullanılan LTE Bandları ve Operatör Dağılımları",
+      "community": 0
+    },
+    {
+      "id": "concepts/sib3",
+      "label": "SIB3",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "sib",
+        "radio",
+        "mobility"
+      ],
+      "summary": "SIB3 (System Information Block Type 3)",
+      "community": 0
+    },
+    {
+      "id": "concepts/sib6",
+      "label": "SIB6",
+      "category": "concepts",
+      "tags": [
+        "lte",
+        "sib",
+        "radio",
+        "3g",
+        "utran"
+      ],
+      "summary": "SIB6 (System Information Block Type 6)",
+      "community": 0
+    },
+    {
+      "id": "cells/cell_earfcn6200_pci210",
+      "label": "Cell_EARFCN6200_PCI210",
+      "category": "cells",
+      "tags": [
+        "cell",
+        "lte",
+        "band20"
+      ],
+      "summary": "Hücre Detayı: Cell_EARFCN6200_PCI210",
+      "community": 1
+    },
+    {
+      "id": "cells/cell_earfcn100_pci265",
+      "label": "Cell_EARFCN100_PCI265",
+      "category": "cells",
+      "tags": [
+        "cell",
+        "lte",
+        "band1"
+      ],
+      "summary": "Hücre Detayı: Cell_EARFCN100_PCI265",
+      "community": 1
+    },
+    {
+      "id": "cells/cell_earfcn3350_pci112",
+      "label": "Cell_EARFCN3350_PCI112",
+      "category": "cells",
+      "tags": [
+        "cell",
+        "lte",
+        "band7"
+      ],
+      "summary": "Hücre Detayı: Cell_EARFCN3350_PCI112",
+      "community": 1
+    },
+    {
+      "id": "cells/cell_earfcn1444_pci82",
+      "label": "Cell_EARFCN1444_PCI82",
+      "category": "cells",
+      "tags": [
+        "cell",
+        "lte",
+        "band3"
+      ],
+      "summary": "Hücre Detayı: Cell_EARFCN1444_PCI82",
+      "community": 1
+    },
+    {
+      "id": "cells/cell_earfcn1300_pci45",
+      "label": "Cell_EARFCN1300_PCI45",
+      "category": "cells",
+      "tags": [
+        "cell",
+        "lte",
+        "band3"
+      ],
+      "summary": "Hücre Detayı: Cell_EARFCN1300_PCI45",
+      "community": 1
+    },
+    {
+      "id": "cells/cell_earfcn2850_pci192",
+      "label": "Cell_EARFCN2850_PCI192",
+      "category": "cells",
+      "tags": [
+        "cell",
+        "lte",
+        "band7"
+      ],
+      "summary": "Hücre Detayı: Cell_EARFCN2850_PCI192",
+      "community": 1
+    },
+    {
+      "id": "cells/cell_earfcn6400_pci189",
+      "label": "Cell_EARFCN6400_PCI189",
+      "category": "cells",
+      "tags": [
+        "cell",
+        "lte",
+        "band20"
+      ],
+      "summary": "Hücre Detayı: Cell_EARFCN6400_PCI189",
+      "community": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "entities/limesdr-mini-2.0",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "skills/docker-kurulum",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "skills/sib-scan.sh",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "entities/srsran",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "skills/dbparsers",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "concepts/sib1",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "synthesis/sistem-mimarisi",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bands/band_20",
+      "target": "cells/cell_earfcn6200_pci210",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bands/band_20",
+      "target": "cells/cell_earfcn6400_pci189",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bands/band_3",
+      "target": "cells/cell_earfcn1444_pci82",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bands/band_3",
+      "target": "cells/cell_earfcn1300_pci45",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bands/band_7",
+      "target": "cells/cell_earfcn3350_pci112",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bands/band_7",
+      "target": "cells/cell_earfcn2850_pci192",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "bands/band_1",
+      "target": "cells/cell_earfcn100_pci265",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "entities/limesdr-mini-2.0",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "entities/srsran",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "skills/dbparsers",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/sib1",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/sib4",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/sib6",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/sib7",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "skills/sib-scan.sh",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "skills/docker-kurulum",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/lte-sib-parser",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/srsran",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/srsran",
+      "target": "skills/sib-scan.sh",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/srsran",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/srsran",
+      "target": "concepts/sib-genel",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/srsran",
+      "target": "entities/limesdr-mini-2.0",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/limesdr-mini-2.0",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/limesdr-mini-2.0",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "entities/limesdr-mini-2.0",
+      "target": "skills/docker-kurulum",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "operators/operator_286_03",
+      "target": "cells/cell_earfcn6200_pci210",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "operators/operator_286_03",
+      "target": "cells/cell_earfcn3350_pci112",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "operators/operator_286_01",
+      "target": "cells/cell_earfcn100_pci265",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "operators/operator_286_01",
+      "target": "cells/cell_earfcn1444_pci82",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "operators/operator_286_01",
+      "target": "cells/cell_earfcn1300_pci45",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "operators/operator_286_01",
+      "target": "cells/cell_earfcn2850_pci192",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "operators/operator_286_01",
+      "target": "cells/cell_earfcn6400_pci189",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "logs/tarama-log",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "logs/tarama-log",
+      "target": "logs/scan_20260601_iter1",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/wiki-ingest-pipeline",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-result-reader",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/rescan-feeder",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/earfcn-validator",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/neighbor-reporter",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan.sh",
+      "target": "skills/dbparsers",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan.sh",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan.sh",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan.sh",
+      "target": "concepts/sib1",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan.sh",
+      "target": "entities/limesdr-mini-2.0",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan.sh",
+      "target": "skills/docker-kurulum",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan.sh",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/docker-kurulum",
+      "target": "entities/srsran",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/docker-kurulum",
+      "target": "skills/dbparsers",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/dbparsers",
+      "target": "concepts/sib1",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/dbparsers",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/dbparsers",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/dbparsers",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/dbparsers",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/dbparsers",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/dbparsers",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "skills/sib-scan-builder",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "references/frekans-tablosu",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "references/frekans-tablosu",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "references/komşu-haritası",
+      "target": "cells/cell_earfcn100_pci265",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "references/komşu-haritası",
+      "target": "cells/cell_earfcn3350_pci112",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "references/komşu-haritası",
+      "target": "cells/cell_earfcn1444_pci82",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "references/komşu-haritası",
+      "target": "cells/cell_earfcn1300_pci45",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "references/komşu-haritası",
+      "target": "cells/cell_earfcn6400_pci189",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/earfcn",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib5",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib5",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/komşu-hücre-analizi",
+      "target": "concepts/sib4",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/komşu-hücre-analizi",
+      "target": "concepts/sib6",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/komşu-hücre-analizi",
+      "target": "concepts/sib7",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/komşu-hücre-analizi",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/komşu-hücre-analizi",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib1",
+      "target": "concepts/sib-genel",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib1",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib1",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "concepts/sib4",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "concepts/sib6",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib-genel",
+      "target": "concepts/sib7",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib4",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib4",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib4",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib4",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/uarfcn",
+      "target": "concepts/earfcn",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/uarfcn",
+      "target": "concepts/sib6",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/uarfcn",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib7",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib7",
+      "target": "concepts/sib6",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/lte-bandlar",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/lte-bandlar",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/lte-bandlar",
+      "target": "concepts/sib3",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/lte-bandlar",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/lte-bandlar",
+      "target": "concepts/komşu-hücre-analizi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/lte-bandlar",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib3",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib3",
+      "target": "concepts/sib6",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib3",
+      "target": "concepts/sib7",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib6",
+      "target": "concepts/sib5",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "concepts/sib6",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6200_pci210",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6200_pci210",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6200_pci210",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6200_pci210",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6200_pci210",
+      "target": "logs/tarama-log",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn100_pci265",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn100_pci265",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn100_pci265",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn100_pci265",
+      "target": "cells/cell_earfcn2850_pci192",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn100_pci265",
+      "target": "cells/cell_earfcn6400_pci189",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn100_pci265",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn100_pci265",
+      "target": "logs/tarama-log",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn3350_pci112",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn3350_pci112",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn3350_pci112",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn3350_pci112",
+      "target": "cells/cell_earfcn6200_pci210",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn3350_pci112",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn3350_pci112",
+      "target": "logs/tarama-log",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1444_pci82",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1444_pci82",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1444_pci82",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1444_pci82",
+      "target": "cells/cell_earfcn1300_pci45",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1444_pci82",
+      "target": "cells/cell_earfcn3350_pci112",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1444_pci82",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1444_pci82",
+      "target": "logs/tarama-log",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1300_pci45",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1300_pci45",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1300_pci45",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1300_pci45",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn1300_pci45",
+      "target": "logs/tarama-log",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn2850_pci192",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn2850_pci192",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn2850_pci192",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn2850_pci192",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn2850_pci192",
+      "target": "logs/tarama-log",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6400_pci189",
+      "target": "entities/lte-sib-parser",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6400_pci189",
+      "target": "concepts/lte-bandlar",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6400_pci189",
+      "target": "references/frekans-tablosu",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6400_pci189",
+      "target": "cells/cell_earfcn2850_pci192",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6400_pci189",
+      "target": "synthesis/sistem-mimarisi",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cells/cell_earfcn6400_pci189",
+      "target": "logs/tarama-log",
+      "relation": "wikilink",
+      "confidence": "EXTRACTED"
+    }
+  ]
+}
