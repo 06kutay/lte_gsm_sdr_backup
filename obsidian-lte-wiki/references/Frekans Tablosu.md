@@ -67,3 +67,10 @@ Radyo taramasında herhangi bir hücre yakalandığında, [[EARFCN]] sayfasında
   $$F_{DL} = 791.0 + 0.1 \times (6300 - 6150) = 806.0\text{ MHz}$$
   Bu frekans tablomuzdan doğrulanarak **Vodafone Band 20** olarak etiketlenir.
 - Detaylı komşuluk ve reselection öncelikleri analizleri için [[Komşu Hücre Analizi]] ve [[Sistem Mimarisi]] sayfalarına bakabilirsiniz.
+
+---
+
+## 4. GSM Frekans Dağılımı ve Lookup Listesi
+
+2G (GSM-900 ve DCS-1800) şebekelerinde kullanılan ARFCN kanal numaraları, downlink frekansları ve operatör spektrum sınırlarının lookup tabloları için **[[GSM Frekans Tablosu]]** sayfasına bakabilirsiniz.
+

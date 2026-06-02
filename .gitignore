@@ -10,6 +10,7 @@ __pycache__/
 vol/output/
 lte-sib-parser/vol/output/
 scan_report_*.txt
+gsm_scan_report_*.txt
 mock_results.json
 scan_results.json
 
@@ -21,3 +22,4 @@ implementation_plan*.md
 venv/
 env/
 .env
+scratch/

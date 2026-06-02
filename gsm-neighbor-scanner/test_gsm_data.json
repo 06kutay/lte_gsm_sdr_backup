@@ -1,0 +1,24 @@
+{
+  "command": "grgsm_livemon_headless -f 947.0e6 --args=\"driver=lime,serial=1DBB4CC5EE717D\" -g 35",
+  "timestamp": "2026-06-02T15:00:00",
+  "sdr_serial": "1DBB4CC5EE717D",
+  "antenna": "LNAW",
+  "cells": [
+    {
+      "arfcn": 60,
+      "freq_mhz": 947.0,
+      "band": "GSM900",
+      "cell_id": 7349,
+      "lac": 33006,
+      "mcc": 286,
+      "mnc": 1,
+      "rssi_dbm": -66,
+      "config": "1 CCCH, not combined",
+      "cell_arfcns": [5, 60],
+      "sdcch": {"type": "SDCCH/8", "timeslot": 1, "tsc": 5, "maio": 0, "hsn": 32},
+      "a5_version": 1,
+      "neighbors_si2": [48, 54, 55, 56, 57, 58, 59, 60, 61],
+      "neighbors_si2quater": {"earfcns": [], "uarfcns": []}
+    }
+  ]
+}

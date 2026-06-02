@@ -28,7 +28,7 @@ LTE boşta (idle) moddayken, mevcut LTE hücresinin kalitesi aşırı düştüğ
 
 SIB7, `carrierFreqsInfoListGERAN` adı verilen bir liste yapısını barındırır. Bu listedeki temel parametreler şunlardır:
 
-- **carrierFreqs (ARFCN Listesi)**: Komşu GERAN (2G) hücrelerinin taşıyıcı frekans numaraları listesi (**ARFCN - Absolute Radio Frequency Channel Number**).
+- **carrierFreqs (ARFCN Listesi)**: Komşu GERAN (2G) hücrelerinin taşıyıcı frekans numaraları listesi (**ARFCN - Absolute Radio Frequency Channel Number**). GSM komşu tespiti ve SI2/SI2quater paket yapıları hakkında detaylı bilgi için bkz: [[GSM SI2]] ve [[GSM SI2quater]].
 - **commonInfo**: GERAN hücre grubu için ortak olan reselection parametreleridir:
   - **cellReselectionPriority**: GERAN frekans grubunun yeniden seçim öncelik değeridir (0 ile 7 arası). Genellikle 2G önceliği LTE ([[SIB5]]) ve 3G ([[SIB6]]) önceliklerinden çok daha düşük (çoğunlukla `0` veya `1`) tutulur.
   - **ncc-Permitted**: Cihazın hangi **NCC (Network Colour Code)** değerlerine sahip baz istasyonlarını aramasına izin verildiğini belirten bit dizisidir (8-bitlik maske).

@@ -68,3 +68,14 @@ Radyo frekans (RF) planlamasında ve mobil siber güvenlik araştırmalarında k
 1.  **Kapsama Alanı Deliklerinin (Coverage Holes) Tespiti**: Komşu planlaması yapılmayan veya komşu ilişkisi kırık olan bölgelerde sinyal olmasına rağmen cihazlar handover yapamadığı için çağrılar düşer (call drops).
 2.  **Fake Base Station (IMSI Catcher) Tespiti**: Sahte baz istasyonları, hedef cihazları üzerlerine çekebilmek için çevre hücrelerin komşuluk ilişkilerini taklit eder veya cihazları daha düşük öncelikli sahte 2G katmanlarına düşürmek için man-in-the-middle saldırıları düzenler. Bu durumlarda sahte hücrelerin komşuluk planları normal şebekeden ciddi şekilde sapar.
 3.  **Ağ Yedekliliğinin Analizi**: Şebeke kalitesinin düştüğü kritik anlarda 3G ([[SIB6]]) ve 2G ([[SIB7]]) katmanlarına doğru yedekleme kanallarının aktif olup olmadığını doğrulamak.
+
+---
+
+## 4. GSM (2G) Şebekelerinde Komşu Hücre Analizi
+
+2G (GSM) şebekelerinde komşuluk ilişkileri, LTE'ye kıyasla daha basitleştirilmiş bir bitmap yapısı olan **BA (BCCH Allocation) Listeleri** üzerinden yönetilir.
+
+* **Idle Mod İzleme:** Cihaz bekleme modundayken en iyi 2G hücresine geçiş yapabilmek için [[GSM SI2]], [[GSM SI2bis]] ve [[GSM SI2ter]] mesajlarında taşınan BA(BCCH) listesindeki komşu ARFCN frekanslarını sürekli dinler.
+* **Dedicated Mod Raporlama:** Aktif bir çağrı sırasında cihaz, [[GSM SI5]], [[GSM SI5bis]] ve [[GSM SI5ter]] mesajları üzerinden kendisine adanan BA(SACCH) listesindeki komşu frekansları ölçer ve her 480 ms'de bir baz istasyonuna (BTS) **Measurement Report** (Ölçüm Raporu) gönderir.
+* **LTE Karşılaştırması:** GSM komşu mimarisi, parametre isimleri ve araç karşılaştırmaları hakkında detaylı teknik analiz için [[GSM vs LTE Komşu Tespiti]] sayfasına bakınız.
+
