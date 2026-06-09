@@ -10,7 +10,7 @@ services:
       - "/dev/bus"
     volumes:
       - /dev/serial:/dev/serial:ro
-      - /dev/bus/usb:/dev/bus/usb:ro
+      - /dev/bus/usb:/dev/bus/usb
       - ./vol:/vol
     ulimits:
       nofile:

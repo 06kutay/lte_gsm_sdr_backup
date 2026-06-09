@@ -5,8 +5,6 @@ __pycache__/
 *.pyd
 
 # SQLite databases & temp outputs
-*.sqlite
-*.sqlite3
 vol/output/
 lte-sib-parser/vol/output/
 scan_report_*.txt
@@ -23,3 +21,4 @@ venv/
 env/
 .env
 scratch/
+*.bin

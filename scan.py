@@ -305,13 +305,15 @@ def main():
     parser = argparse.ArgumentParser(description="LTE Automatic Scan and Reporting Tool")
     parser.add_argument("inputs", nargs="*", help="Space/comma-separated EARFCN list")
     parser.add_argument("-g", "--gain", type=int, default=40, help="SDR RX gain in dB (default: 40)")
+    parser.add_argument("--sdr", type=str, choices=["limesdr", "usrp", "auto"], default="auto", help="SDR hardware type (default: auto-detect)")
+    parser.add_argument("--antenna", type=str, default=None, help="Force antenna port name (e.g. TX/RX)")
     
     args = parser.parse_args()
 
     if not args.inputs:
-        print("Kullanım: python3 scan.py <EARFCN listesi veya tek tek EARFCN'ler> [-g GAIN]")
+        print("Kullanım: python3 scan.py <EARFCN listesi veya tek tek EARFCN'ler> [-g GAIN] [--sdr SDR_TYPE] [--antenna ANTENNA]")
         print("Örnek:   python3 scan.py 100")
-        print("Örnek:   python3 scan.py \"100 6400 2850\" -g 42")
+        print("Örnek:   python3 scan.py \"100 6400 2850\" -g 42 --sdr usrp")
         sys.exit(1)
 
     # 1. Parse input EARFCNs
@@ -333,6 +335,49 @@ def main():
     print("=" * 70)
     print(f"Girdi EARFCN Listesi: {earfcns}")
     print(f"Ayarlanan RX Gain   : {args.gain} dB")
+    
+    # Auto-detection or force setting SDR type
+    sdr_type = args.sdr.lower()
+    if sdr_type == "auto":
+        usrp_found = False
+        limesdr_found = False
+        try:
+            lsusb_check = subprocess.run("lsusb", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            
+            # Check USRP
+            if "2500:" in lsusb_check.stdout or "Ettus" in lsusb_check.stdout:
+                usrp_found = True
+            else:
+                usrp_check = subprocess.run("uhd_find_devices", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                if "product:" in usrp_check.stdout or "type: b2" in usrp_check.stdout:
+                    usrp_found = True
+            
+            # Check LimeSDR
+            if "0403:601f" in lsusb_check.stdout or "FT601" in lsusb_check.stdout or "LimeSDR" in lsusb_check.stdout:
+                limesdr_found = True
+            else:
+                lime_check = subprocess.run("LimeUtil --find", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                if "LimeSDR" in lime_check.stdout:
+                    limesdr_found = True
+                else:
+                    # Also check if uhd_find_devices detected it via soapy driver
+                    if "driver: lime" in usrp_check.stdout:
+                        limesdr_found = True
+        except Exception:
+            pass
+
+        if usrp_found and limesdr_found:
+            print("📢 Bilgi: Hem USRP hem de LimeSDR cihazı tespit edildi. Öncelikli olarak USRP seçiliyor.")
+            sdr_type = "usrp"
+        elif usrp_found:
+            sdr_type = "usrp"
+        elif limesdr_found:
+            sdr_type = "limesdr"
+        else:
+            print("[HATA] Herhangi bir SDR cihazı (USRP veya LimeSDR) bağlı bulunamadı! Lütfen cihaz bağlantısını kontrol edin.")
+            sys.exit(1)
+            
+    print(f"Tespit Edilen SDR   : {sdr_type.upper()}")
     print("=" * 70)
 
     # 2. Group EARFCNs by antenna port (LNAH >= 1.5 GHz, LNAW < 1.5 GHz)
@@ -345,9 +390,10 @@ def main():
             print(f"[UYARI] Tanımsız EARFCN es geçildi: {e}")
             continue
         
-        # Check LimeSDR frequency limits (10 MHz - 3.5 GHz)
-        if not (10.0 <= freq <= 3500.0):
-            print(f"[HATA] LimeSDR donanım limitleri dışında frekans ({freq} MHz): {e}")
+        # Check SDR frequency limits
+        min_freq, max_freq = (70.0, 6000.0) if sdr_type == "usrp" else (10.0, 3500.0)
+        if not (min_freq <= freq <= max_freq):
+            print(f"[HATA] {sdr_type.upper()} donanım limitleri dışında frekans ({freq} MHz): {e}")
             continue
             
         if freq >= 1500.0:
@@ -355,8 +401,15 @@ def main():
         else:
             lnaw_list.append(e)
 
-    print(f"-> LNAH (Yüksek Band - Anten Portu 1) Kanalları: {lnah_list}")
-    print(f"-> LNAW (Düşük Band - Anten Portu 2) Kanalları: {lnaw_list}")
+    if sdr_type == "usrp":
+        antenna_name = args.antenna or "TX/RX"
+        print(f"-> USRP Yüksek Band Kanalları: {lnah_list} ({antenna_name})")
+        print(f"-> USRP Düşük Band Kanalları: {lnaw_list} ({antenna_name})")
+    else:
+        high_ant = args.antenna or "LNAH"
+        low_ant = args.antenna or "LNAW"
+        print(f"-> LNAH (Yüksek Band - {high_ant}) Kanalları: {lnah_list}")
+        print(f"-> LNAW (Düşük Band - {low_ant}) Kanalları: {lnaw_list}")
     print("=" * 70)
 
     # Output databases
@@ -374,25 +427,48 @@ def main():
     
     start_total_time = time.time()
 
-    # 3. Execution - LNAH scan
-    if lnah_list:
-        print("\n📢 [1/2] LNAH (YÜKSEK BAND) TARAMASI HAZIRLIĞI")
-        print("👉 Anten kablosunun LimeSDR üzerindeki LNAH portuna takılı olduğundan emin olun.")
+    # If USRP, prompt only once at the beginning
+    if sdr_type == "usrp" and total_earfcns > 0:
+        antenna = args.antenna or "TX/RX"
+        print(f"\n📢 USRP B210 BAĞLANTI UYARISI")
+        print(f"👉 Anten kablonuzun USRP üzerindeki '{antenna}' portuna bağlı olduğundan emin olun.")
         input("👉 Hazır olduğunuzda devam etmek için ENTER tuşuna basın...")
+
+    # 3. Execution - LNAH / High band scan
+    if lnah_list:
+        if sdr_type == "usrp":
+            antenna = args.antenna or "TX/RX"
+            print(f"\n📢 [1/2] YÜKSEK BAND TARAMASI (USRP: {antenna})")
+        else:
+            antenna = args.antenna or "LNAH"
+            print("\n📢 [1/2] LNAH (YÜKSEK BAND) TARAMASI HAZIRLIĞI")
+            print(f"👉 Anten kablosunun LimeSDR üzerindeki {antenna} portuna takılı olduğundan emin olun.")
+            input("👉 Hazır olduğunuzda devam etmek için ENTER tuşuna basın...")
         
+        driver = "uhd" if sdr_type == "usrp" else "soapy"
+        timeout_val = 45 if sdr_type == "usrp" else 20
+        extra_timeout_val = 15 if sdr_type == "usrp" else 10
         earfcns_str = " ".join(str(x) for x in lnah_list)
-        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c './sib-scan.sh -d soapy -a \\\"rxant=LNAH\\\" -g {args.gain} -q \\\"{earfcns_str}\\\" -n -t 20 -T 10 -D {high_db}'\""
+        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c 'cp /vol/helpers/uhd_images/*.bin /usr/share/uhd/images/ 2>/dev/null || true; ./sib-scan.sh -d {driver} -a \\\"rxant={antenna}\\\" -g {args.gain} -q \\\"{earfcns_str}\\\" -n -t {timeout_val} -T {extra_timeout_val} -D {high_db}'\""
         if run_scan_with_progress(cmd, cells_data, scanned_earfcns, total_earfcns, cwd="/home/mobsec/Desktop/netmon/lte-sib-parser"):
             scanned_dbs.append(high_db_real)
 
-    # 4. Execution - LNAW scan
+    # 4. Execution - LNAW / Low band scan
     if lnaw_list:
-        print("\n📢 [2/2] LNAW (DÜŞÜK BAND) TARAMASI HAZIRLIĞI")
-        print("👉 Anten kablosunun LimeSDR üzerindeki LNAW portuna bağlı olduğundan emin olun.")
-        input("👉 Hazır olduğunuzda devam etmek için ENTER tuşuna basın...")
-        
+        if sdr_type == "usrp":
+            antenna = args.antenna or "TX/RX"
+            print(f"\n📢 [2/2] DÜŞÜK BAND TARAMASI (USRP: {antenna})")
+        else:
+            antenna = args.antenna or "LNAW"
+            print("\n📢 [2/2] LNAW (DÜŞÜK BAND) TARAMASI HAZIRLIĞI")
+            print(f"👉 Anten kablosunun LimeSDR üzerindeki {antenna} portuna bağlı olduğundan emin olun.")
+            input("👉 Hazır olduğunuzda devam etmek için ENTER tuşuna basın...")
+            
+        driver = "uhd" if sdr_type == "usrp" else "soapy"
+        timeout_val = 45 if sdr_type == "usrp" else 20
+        extra_timeout_val = 15 if sdr_type == "usrp" else 10
         earfcns_str = " ".join(str(x) for x in lnaw_list)
-        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c './sib-scan.sh -d soapy -a \\\"rxant=LNAW\\\" -g {args.gain} -q \\\"{earfcns_str}\\\" -n -t 20 -T 10 -D {low_db}'\""
+        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c 'cp /vol/helpers/uhd_images/*.bin /usr/share/uhd/images/ 2>/dev/null || true; ./sib-scan.sh -d {driver} -a \\\"rxant={antenna}\\\" -g {args.gain} -q \\\"{earfcns_str}\\\" -n -t {timeout_val} -T {extra_timeout_val} -D {low_db}'\""
         if run_scan_with_progress(cmd, cells_data, scanned_earfcns, total_earfcns, cwd="/home/mobsec/Desktop/netmon/lte-sib-parser"):
             scanned_dbs.append(low_db_real)
 
