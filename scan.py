@@ -334,7 +334,6 @@ def main():
     print("        📡 LTE OTOMATİK TARAMA & RAPORLAMA SİSTEMİ 📡")
     print("=" * 70)
     print(f"Girdi EARFCN Listesi: {earfcns}")
-    print(f"Ayarlanan RX Gain   : {args.gain} dB")
     
     # Auto-detection or force setting SDR type
     sdr_type = args.sdr.lower()
@@ -377,7 +376,14 @@ def main():
             print("[HATA] Herhangi bir SDR cihazı (USRP veya LimeSDR) bağlı bulunamadı! Lütfen cihaz bağlantısını kontrol edin.")
             sys.exit(1)
             
+    # Set default gain depending on SDR type if user didn't change the default (40)
+    rx_gain = args.gain
+    if sdr_type == "usrp" and rx_gain == 40:
+        rx_gain = 70
+        print("📢 Bilgi: USRP için varsayılan RX Gain değeri otomatik olarak 70 dB olarak ayarlandı.")
+
     print(f"Tespit Edilen SDR   : {sdr_type.upper()}")
+    print(f"Kullanılan RX Gain  : {rx_gain} dB")
     print("=" * 70)
 
     # 2. Group EARFCNs by antenna port (LNAH >= 1.5 GHz, LNAW < 1.5 GHz)
@@ -449,7 +455,7 @@ def main():
         timeout_val = 45 if sdr_type == "usrp" else 20
         extra_timeout_val = 15 if sdr_type == "usrp" else 10
         earfcns_str = " ".join(str(x) for x in lnah_list)
-        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c 'cp /vol/helpers/uhd_images/*.bin /usr/share/uhd/images/ 2>/dev/null || true; ./sib-scan.sh -d {driver} -a \\\"rxant={antenna}\\\" -g {args.gain} -q \\\"{earfcns_str}\\\" -n -t {timeout_val} -T {extra_timeout_val} -D {high_db}'\""
+        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c 'cp /vol/helpers/uhd_images/*.bin /usr/share/uhd/images/ 2>/dev/null || true; ./sib-scan.sh -d {driver} -a \\\"rxant={antenna}\\\" -g {rx_gain} -q \\\"{earfcns_str}\\\" -n -t {timeout_val} -T {extra_timeout_val} -D {high_db}'\""
         if run_scan_with_progress(cmd, cells_data, scanned_earfcns, total_earfcns, cwd="/home/mobsec/Desktop/netmon/lte-sib-parser"):
             scanned_dbs.append(high_db_real)
 
@@ -468,7 +474,7 @@ def main():
         timeout_val = 45 if sdr_type == "usrp" else 20
         extra_timeout_val = 15 if sdr_type == "usrp" else 10
         earfcns_str = " ".join(str(x) for x in lnaw_list)
-        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c 'cp /vol/helpers/uhd_images/*.bin /usr/share/uhd/images/ 2>/dev/null || true; ./sib-scan.sh -d {driver} -a \\\"rxant={antenna}\\\" -g {args.gain} -q \\\"{earfcns_str}\\\" -n -t {timeout_val} -T {extra_timeout_val} -D {low_db}'\""
+        cmd = f"sg docker -c \"docker-compose run --rm --entrypoint bash worker -c 'cp /vol/helpers/uhd_images/*.bin /usr/share/uhd/images/ 2>/dev/null || true; ./sib-scan.sh -d {driver} -a \\\"rxant={antenna}\\\" -g {rx_gain} -q \\\"{earfcns_str}\\\" -n -t {timeout_val} -T {extra_timeout_val} -D {low_db}'\""
         if run_scan_with_progress(cmd, cells_data, scanned_earfcns, total_earfcns, cwd="/home/mobsec/Desktop/netmon/lte-sib-parser"):
             scanned_dbs.append(low_db_real)
 
