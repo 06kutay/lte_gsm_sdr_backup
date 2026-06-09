@@ -1,0 +1,25 @@
+version: "3"
+services:
+  worker:
+    build: ./worker/
+    stdin_open: true
+    privileged: true
+    cap_add:
+      - SYS_NICE
+    devices:
+      - "/dev/bus"
+    volumes:
+      - /dev/serial:/dev/serial:ro
+      - /dev/bus/usb:/dev/bus/usb:ro
+      - ./vol:/vol
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+      nice:
+        soft: 0
+        hard: 0
+      memlock:
+        soft: -1
+        hard: -1
+    restart: 'no'

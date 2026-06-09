@@ -1,0 +1,224 @@
+syntax = "proto3";
+
+package sdr_worker;
+
+message Empty {}
+
+message HealthResponse {
+  string status = 1;      // e.g. "SERVING", "NOT_SERVING"
+  string sdr_type = 2;    // e.g. "limesdr", "usrp"
+  string serial = 3;      // SDR serial
+  string role = 4;        // "high" or "low"
+  string antenna = 5;     // antenna port
+  double uptime = 6;      // uptime in seconds
+}
+
+message EarfcnList {
+  repeated int32 earfcns = 1;
+}
+
+message EarfcnValidation {
+  int32 earfcn = 1;
+  int32 band = 2;
+  float freq_mhz = 3;
+  bool is_valid = 4;
+  string error_message = 5;
+  string antenna_port = 6;
+}
+
+message ValidationResult {
+  repeated EarfcnValidation validations = 1;
+  bool all_valid = 2;
+}
+
+message ScanRequest {
+  repeated int32 earfcns = 1;
+  int32 gain = 2;
+  int32 timeout = 3;
+  int32 extra_timeout = 4;
+  bool recursive = 5;
+}
+
+message ScanResponse {
+  string scan_id = 1;
+  bool started = 2;
+  string message = 3;
+}
+
+message ScanId {
+  string scan_id = 1;
+}
+
+message ScanStatusResponse {
+  string scan_id = 1;
+  string status = 2;          // e.g. "PENDING", "RUNNING", "COMPLETED", "FAILED", "STOPPED"
+  int32 current_earfcn = 3;
+  string current_step = 4;    // e.g. "1/3"
+  repeated string decoded_sibs = 5;
+}
+
+message CellInfo {
+  int32 earfcn = 1;
+  int32 band = 2;
+  float freq_mhz = 3;
+  int32 pci = 4;
+  int64 cell_id = 5;
+  string plmn = 6;
+  string operator_name = 7;
+  int32 tac = 8;
+  float rsrp = 9;
+  string bandwidth = 10;
+  repeated string sibs_decoded = 11;
+}
+
+message NeighborInfo {
+  int32 neighbor_earfcn = 1;
+  int32 neighbor_band = 2;
+  float neighbor_freq = 3;
+  int32 priority = 4;
+  int32 thresh_x_high = 5;
+  int32 thresh_x_low = 6;
+  string bandwidth = 7;
+  string neighbor_type = 8;    // e.g. "intra", "inter", "utran", "geran"
+  int32 pci_or_psc = 9;
+}
+
+message ScanResultsResponse {
+  string scan_id = 1;
+  repeated CellInfo cells = 2;
+}
+
+message CellQuery {
+  string scan_id = 1;
+  int32 earfcn = 2;
+}
+
+message CellInfoResponse {
+  bool found = 1;
+  CellInfo cell = 2;
+}
+
+message NeighborResponse {
+  int32 earfcn = 1;
+  repeated NeighborInfo neighbors = 2;
+}
+
+message NeighborRelation {
+  string cell_a = 1;          // e.g. "100 (PCI 265)"
+  string cell_b = 2;          // e.g. "2850 (PCI 120)" or "2850 (Taranmamis)"
+  string direction = 3;       // "↔" or "→"
+  string relation_type = 4;   // e.g. "Bidirectional", "Unidirectional", "Unscanned"
+}
+
+message NeighborMapResponse {
+  string scan_id = 1;
+  repeated NeighborRelation relations = 2;
+}
+
+message StopResponse {
+  string scan_id = 1;
+  bool stopped = 2;
+  string message = 3;
+}
+
+service SDRWorkerService {
+  rpc GetHealth (Empty) returns (HealthResponse);
+  rpc ValidateEarfcns (EarfcnList) returns (ValidationResult);
+  rpc StartScan (ScanRequest) returns (ScanResponse);
+  rpc GetScanStatus (ScanId) returns (ScanStatusResponse);
+  rpc GetScanResults (ScanId) returns (ScanResultsResponse);
+  rpc GetCellInfo (CellQuery) returns (CellInfoResponse);
+  rpc GetNeighbors (CellQuery) returns (NeighborResponse);
+  rpc GetNeighborMap (ScanId) returns (NeighborMapResponse);
+  rpc GetUnscannedEarfcns (ScanId) returns (EarfcnList);
+  rpc StopScan (ScanId) returns (StopResponse);
+
+  // --- GSM Service Extensions ---
+  rpc StartGsmScan (GsmScanRequest) returns (ScanResponse);
+  rpc StartGsmBandScan (GsmBandScanRequest) returns (ScanResponse);
+  rpc GetGsmScanResults (ScanId) returns (GsmScanResultsResponse);
+  rpc GetGsmNeighbors (GsmCellQuery) returns (GsmNeighborResponse);
+  rpc GetGsmInterRatNeighbors (ScanId) returns (GsmInterRatResponse);
+  rpc ValidateArfcns (ArfcnList) returns (ArfcnValidationResult);
+}
+
+message ArfcnList {
+  repeated int32 arfcns = 1;
+}
+
+message ArfcnValidation {
+  int32 arfcn = 1;
+  string band = 2;
+  float freq_mhz = 3;
+  bool is_valid = 4;
+  string error_message = 5;
+  string antenna_port = 6;
+}
+
+message ArfcnValidationResult {
+  repeated ArfcnValidation validations = 1;
+  bool all_valid = 2;
+}
+
+message GsmScanRequest {
+  repeated int32 arfcns = 1;
+  int32 gain = 2;
+  int32 timeout = 3;
+}
+
+message GsmBandScanRequest {
+  string band = 1;      // "GSM900" or "DCS1800"
+  int32 gain = 2;
+}
+
+message GsmCellInfo {
+  int32 arfcn = 1;
+  string band = 2;
+  float freq_mhz = 3;
+  int64 cell_id = 4;
+  int32 lac = 5;
+  int32 mcc = 6;
+  int32 mnc = 7;
+  string plmn = 8;
+  string operator_name = 9;
+  float rssi_dbm = 10;
+  repeated string si_decoded = 11;
+  repeated int32 neighbors_si2 = 12;
+}
+
+message GsmNeighborInfo {
+  int32 arfcn = 1;
+  string band = 2;
+  float freq_mhz = 3;
+  string neighbor_type = 4; // e.g. "2G GSM"
+  string operator_estimate = 5;
+}
+
+message GsmNeighborResponse {
+  int32 arfcn = 1;
+  repeated GsmNeighborInfo neighbors = 2;
+}
+
+message GsmInterRatNeighbor {
+  string rat_type = 1;        // "4G LTE" or "3G UMTS"
+  int32 channel = 2;          // EARFCN or UARFCN
+  string band = 3;
+  float freq_mhz = 4;
+  bool already_scanned = 5;
+  string cross_link = 6;
+}
+
+message GsmInterRatResponse {
+  string scan_id = 1;
+  repeated GsmInterRatNeighbor inter_rat_neighbors = 2;
+}
+
+message GsmScanResultsResponse {
+  string scan_id = 1;
+  repeated GsmCellInfo cells = 2;
+}
+
+message GsmCellQuery {
+  string scan_id = 1;
+  int32 arfcn = 2;
+}
