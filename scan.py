@@ -304,20 +304,51 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="LTE Automatic Scan and Reporting Tool")
     parser.add_argument("inputs", nargs="*", help="Space/comma-separated EARFCN list")
-    parser.add_argument("-g", "--gain", type=int, default=40, help="SDR RX gain in dB (default: 40)")
+    parser.add_argument("-g", "--gain", type=int, default=None, help="SDR RX gain in dB (default: 40 for LimeSDR, 70 for USRP)")
     parser.add_argument("--sdr", type=str, choices=["limesdr", "usrp", "auto"], default="auto", help="SDR hardware type (default: auto-detect)")
     parser.add_argument("--antenna", type=str, default=None, help="Force antenna port name (e.g. TX/RX)")
     
     args = parser.parse_args()
 
-    if not args.inputs:
-        print("Kullanım: python3 scan.py <EARFCN listesi veya tek tek EARFCN'ler> [-g GAIN] [--sdr SDR_TYPE] [--antenna ANTENNA]")
-        print("Örnek:   python3 scan.py 100")
-        print("Örnek:   python3 scan.py \"100 6400 2850\" -g 42 --sdr usrp")
-        sys.exit(1)
+    # Pre-parse inputs list to handle potential spaces in options like "-- gain 40"
+    inputs = list(args.inputs)
+    rx_gain = args.gain
+    sdr_type = args.sdr.lower() if args.sdr else "auto"
+    antenna_forced = args.antenna
 
-    # 1. Parse input EARFCNs
-    raw_args = " ".join(args.inputs)
+    # A helper to extract values from inputs list if passed as positional arguments
+    def extract_val(keys):
+        nonlocal inputs
+        for i, val in enumerate(inputs):
+            if val.lower() in keys:
+                if i + 1 < len(inputs):
+                    value = inputs[i + 1]
+                    # remove from inputs
+                    inputs.pop(i + 1)
+                    inputs.pop(i)
+                    return value
+                else:
+                    inputs.pop(i)
+        return None
+
+    # Try extracting options from positional inputs
+    extracted_gain = extract_val(["gain", "--gain", "-g"])
+    if extracted_gain is not None:
+        try:
+            rx_gain = int(extracted_gain)
+        except ValueError:
+            pass
+
+    extracted_sdr = extract_val(["sdr", "--sdr"])
+    if extracted_sdr is not None:
+        sdr_type = extracted_sdr.lower()
+
+    extracted_ant = extract_val(["antenna", "--antenna"])
+    if extracted_ant is not None:
+        antenna_forced = extracted_ant
+
+    # Now parse remaining inputs for EARFCNs
+    raw_args = " ".join(inputs)
     raw_args = raw_args.replace(",", " ").replace(";", " ")
     earfcns = []
     for x in raw_args.split():
@@ -327,7 +358,9 @@ def main():
             pass
 
     if not earfcns:
-        print("[HATA] Geçerli bir EARFCN numarası girilmedi!")
+        print("Kullanım: python3 scan.py <EARFCN listesi veya tek tek EARFCN'ler> [-g GAIN] [--sdr SDR_TYPE] [--antenna ANTENNA]")
+        print("Örnek:   python3 scan.py 100")
+        print("Örnek:   python3 scan.py \"100 6400 2850\" -g 42 --sdr usrp")
         sys.exit(1)
 
     print("=" * 70)
@@ -336,7 +369,6 @@ def main():
     print(f"Girdi EARFCN Listesi: {earfcns}")
     
     # Auto-detection or force setting SDR type
-    sdr_type = args.sdr.lower()
     if sdr_type == "auto":
         usrp_found = False
         limesdr_found = False
@@ -376,11 +408,14 @@ def main():
             print("[HATA] Herhangi bir SDR cihazı (USRP veya LimeSDR) bağlı bulunamadı! Lütfen cihaz bağlantısını kontrol edin.")
             sys.exit(1)
             
-    # Set default gain depending on SDR type if user didn't change the default (40)
-    rx_gain = args.gain
-    if sdr_type == "usrp" and rx_gain == 40:
-        rx_gain = 70
-        print("📢 Bilgi: USRP için varsayılan RX Gain değeri otomatik olarak 70 dB olarak ayarlandı.")
+    # Set default gain depending on SDR type if user didn't specify one
+    if rx_gain is None:
+        if sdr_type == "usrp":
+            rx_gain = 70
+            print("📢 Bilgi: USRP için varsayılan RX Gain değeri otomatik olarak 70 dB olarak ayarlandı.")
+        else:
+            rx_gain = 40
+            print("📢 Bilgi: LimeSDR için varsayılan RX Gain değeri otomatik olarak 40 dB olarak ayarlandı.")
 
     print(f"Tespit Edilen SDR   : {sdr_type.upper()}")
     print(f"Kullanılan RX Gain  : {rx_gain} dB")
@@ -408,12 +443,12 @@ def main():
             lnaw_list.append(e)
 
     if sdr_type == "usrp":
-        antenna_name = args.antenna or "TX/RX"
+        antenna_name = antenna_forced or "TX/RX"
         print(f"-> USRP Yüksek Band Kanalları: {lnah_list} ({antenna_name})")
         print(f"-> USRP Düşük Band Kanalları: {lnaw_list} ({antenna_name})")
     else:
-        high_ant = args.antenna or "LNAH"
-        low_ant = args.antenna or "LNAW"
+        high_ant = antenna_forced or "LNAH"
+        low_ant = antenna_forced or "LNAW"
         print(f"-> LNAH (Yüksek Band - {high_ant}) Kanalları: {lnah_list}")
         print(f"-> LNAW (Düşük Band - {low_ant}) Kanalları: {lnaw_list}")
     print("=" * 70)
@@ -435,7 +470,7 @@ def main():
 
     # If USRP, prompt only once at the beginning
     if sdr_type == "usrp" and total_earfcns > 0:
-        antenna = args.antenna or "TX/RX"
+        antenna = antenna_forced or "TX/RX"
         print(f"\n📢 USRP B210 BAĞLANTI UYARISI")
         print(f"👉 Anten kablonuzun USRP üzerindeki '{antenna}' portuna bağlı olduğundan emin olun.")
         input("👉 Hazır olduğunuzda devam etmek için ENTER tuşuna basın...")
@@ -443,10 +478,10 @@ def main():
     # 3. Execution - LNAH / High band scan
     if lnah_list:
         if sdr_type == "usrp":
-            antenna = args.antenna or "TX/RX"
+            antenna = antenna_forced or "TX/RX"
             print(f"\n📢 [1/2] YÜKSEK BAND TARAMASI (USRP: {antenna})")
         else:
-            antenna = args.antenna or "LNAH"
+            antenna = antenna_forced or "LNAH"
             print("\n📢 [1/2] LNAH (YÜKSEK BAND) TARAMASI HAZIRLIĞI")
             print(f"👉 Anten kablosunun LimeSDR üzerindeki {antenna} portuna takılı olduğundan emin olun.")
             input("👉 Hazır olduğunuzda devam etmek için ENTER tuşuna basın...")
@@ -462,10 +497,10 @@ def main():
     # 4. Execution - LNAW / Low band scan
     if lnaw_list:
         if sdr_type == "usrp":
-            antenna = args.antenna or "TX/RX"
+            antenna = antenna_forced or "TX/RX"
             print(f"\n📢 [2/2] DÜŞÜK BAND TARAMASI (USRP: {antenna})")
         else:
-            antenna = args.antenna or "LNAW"
+            antenna = antenna_forced or "LNAW"
             print("\n📢 [2/2] LNAW (DÜŞÜK BAND) TARAMASI HAZIRLIĞI")
             print(f"👉 Anten kablosunun LimeSDR üzerindeki {antenna} portuna bağlı olduğundan emin olun.")
             input("👉 Hazır olduğunuzda devam etmek için ENTER tuşuna basın...")
