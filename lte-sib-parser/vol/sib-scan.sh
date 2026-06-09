@@ -217,7 +217,6 @@ while true; do
             echo "[srsue] connecting to $earfcn"
             rm /tmp/ue.log -f
 			      srsue $SRSUECFG --log.filename $SRSUELOG \
-                            --expert.lte_sample_rates=true \
                             --rf.device_name "$device_name" \
                             --rf.device_args "$device_args" \
                             --rf.rx_gain "$rx_gain" \

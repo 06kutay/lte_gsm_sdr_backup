@@ -12,6 +12,7 @@ def read_line(log, timeout):
             return ""
         line = log.readline()
         if not len(line):
+            time.sleep(0.1)
             continue
         buffer_line += line
         if buffer_line[-1] == "\n":
@@ -194,6 +195,7 @@ while True:
         if "rsrp" in msg:
             if "rsrp" in retrieved:
                 continue
+            retrieved["rsrp"] = msg["rsrp"]
             print(json.dumps(msg), flush=True)
             if database:
                 write_db(database, earfcn, "rsrp", str(msg["rsrp"]))

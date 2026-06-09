@@ -499,6 +499,7 @@ def main():
         if sdr_type == "usrp":
             antenna = antenna_forced or "TX/RX"
             print(f"\n📢 [2/2] DÜŞÜK BAND TARAMASI (USRP: {antenna})")
+            time.sleep(3)
         else:
             antenna = antenna_forced or "LNAW"
             print("\n📢 [2/2] LNAW (DÜŞÜK BAND) TARAMASI HAZIRLIĞI")
